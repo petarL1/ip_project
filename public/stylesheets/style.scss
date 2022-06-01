@@ -1,0 +1,17 @@
+@import"../../node_modules/bootstrap/scss/bootstrap";
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: lightgreen;
+  text-align: center;
+  height: 70px;
+  line-height: 70px;
+}
+
+.nav-link{
+  font-weight: bold;
+  font-size: larger;
+  padding:25px;
+}

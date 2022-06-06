@@ -1,11 +1,11 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-router.get('/', function(req, res, next) {
-  res.render('tasks', {
-    title: 'Your To Do List',
-    currentPage: 'home'
-  });
-});
+const tasksController = require('../controllers/tasks-controller');
+
+router.get('/', tasksController.index);
 
 module.exports = router;
+
+
+

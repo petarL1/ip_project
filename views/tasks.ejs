@@ -1,2 +1,38 @@
 <%- include('partials/header')%>
+
+<div class="row">
+    <div class="offset-md-2 col-md-8 text-center">
+        <h3>
+            Your To Do List:
+        </h3>
+    </div>
+    <div class="col-md-2">
+        <a class="btn btn-sm btn-outline-primary" href="/tasks/new">+ Add</a>
+    </div>
+</div>
+<br>
+<div class="container">
+    <% for(var i = 0; i < tasks.length; i++) { %>
+    <div class="row d-flex align-items-center" style="background:#b5ffc9; border-radius: 5px;">
+        <div class="col-1" style="text-align:center; align-items: center; align-content: center;">
+            <%-tasks[i].id%>
+        </div>
+        <div class="col-2" id="div_title">
+            <%-tasks[i].title%>
+        </div>
+        <div class="col-5" id="div_description">
+            <%-tasks[i].description%>
+        </div>
+        <div class="col-2">
+            <%-tasks[i].date_created%>
+        </div>
+        <div class="col-2">
+            <%-tasks[i].date_end%>
+        </div>
+    </div>
+    <br />
+    <% } %>
+</div>
+</div>
+
 <%- include('partials/footer')%>

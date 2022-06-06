@@ -6,16 +6,17 @@
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-<nav id="navbar" style="background-color: lightgreen;">
+<nav id="navbar" style="background-color: #b5ffc9;">
   <ul class="nav justify-content-center">
     <li class="nav-item">
       <a class="nav-link" href="/tasks"><img height="30" width="30" src="https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/8f/0b/11/8f0b111d-c482-df1b-3cb9-dd61ad89a0d4/source/256x256bb.jpg"></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/tasks">Tasks</a>
+      <a class="nav-link <%- currentPage == 'home' ? 'active' : ''%>" href="/tasks">Tasks</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/about">About Us</a>
+      <a class="nav-link <%- currentPage == 'about' ? 'active' : ''%>" href="/about">About Us</a>
     </li>
   </ul>
 </nav>
+<br />

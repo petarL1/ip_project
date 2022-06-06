@@ -4,7 +4,7 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: lightgreen;
+  background: #b5ffc9;
   text-align: center;
   height: 70px;
   line-height: 70px;
@@ -14,4 +14,19 @@
   font-weight: bold;
   font-size: larger;
   padding:25px;
+}
+
+#div_title{
+  font-weight: bold;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+#div_description{
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+#div_id{
+  background-color: #defaeb;
 }

@@ -12,18 +12,34 @@ getAll = () =>{
     });
 };
 
-getById = (id) =>{
+storeNew = (input) =>{
     return new Promise((resolve, reject) => {
-        connection.query('SELECT * FROM tasks WHERE id = ' + id,  (error, elements)=>{
+        let sql = "INSERT INTO tasks (title, description) VALUES ('" + input.title + "', '" + input.description + "')";
+
+        connection.query(sql,  (error, tasks)=>{
             if(error){
                 return reject(error);
             }
-            return resolve(elements[0]);
+            return resolve(tasks);
+        });
+    });
+};
+
+deleteById = (id) =>{
+    return new Promise((resolve, reject) => {
+        let sql = "DELETE FROM tasks WHERE id = " + id;
+
+        connection.query(sql, (error, tasks)=> {
+            if(error){
+                return reject(error);
+            }
+            return resolve(tasks);
         });
     });
 };
 
 module.exports = {
     getAll,
-    getById
+    storeNew,
+    deleteById
 }

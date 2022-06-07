@@ -11124,13 +11124,13 @@ textarea.form-control-lg {
   width: 100%;
   background: #b5ffc9;
   text-align: center;
-  height: 70px;
+  height: 60px;
 }
 
 .nav-link {
   font-weight: bold;
   font-size: larger;
-  padding: 25px;
+  padding: 15px;
 }
 
 #div_title {
@@ -11146,6 +11146,10 @@ textarea.form-control-lg {
 
 #div_id {
   background-color: #defaeb;
+}
+
+input {
+  border: 1px solid black;
 }
 
 /*# sourceMappingURL=style.css.map */

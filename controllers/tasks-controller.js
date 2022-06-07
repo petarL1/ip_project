@@ -95,3 +95,13 @@ exports.destroy = async function (req, res, next) {
     res.redirect('/');
 
 }
+
+exports.edit = async function (req, res, next) {
+
+    let id = req.params.id;
+
+    tasksService.EditById(id);
+
+    res.redirect('/');
+
+}

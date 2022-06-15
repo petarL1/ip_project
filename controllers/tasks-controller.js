@@ -48,6 +48,47 @@ exports.store = async function (req, res, next) {
     }
 }
 
+exports.show = async function(req, res, next) {
+
+    try{
+        let id = req.params.id;
+
+        id = id.replace( /[^\d].*/, '' );
+
+        id = Number(id);
+
+        if(typeof id != 'number'){
+            // throw error
+        }
+
+        let task = await tasksService.getById(id);
+
+        if(!task){
+            res.status(404);
+
+            res.render('task', {
+                title: 'Tasks',
+                currentPage: 'home',
+                task: {
+                    title: 'Task not found'
+                },
+                valid: false
+            });
+
+        }
+        res.render('task', {
+            title: 'Tasks',
+            currentPage: 'home',
+            task
+        });
+
+    }
+    catch (e){
+        console.log(e);
+    }
+
+}
+
 function validateAndCreateTaskFormData(body){
 
     let title = body.title;
@@ -90,7 +131,7 @@ exports.destroy = async function (req, res, next) {
 
     let id = req.params.id;
 
-    tasksService.deleteById(id);
+    await tasksService.deleteById(id);
 
     res.redirect('/');
 
@@ -98,10 +139,38 @@ exports.destroy = async function (req, res, next) {
 
 exports.edit = async function (req, res, next) {
 
-    let id = req.params.id;
+    try{
+        let id = req.params.id;
 
-    tasksService.EditById(id);
+        id = id.replace( /[^\d].*/, '' );
 
-    res.redirect('/');
+        id = Number(id);
 
+        if(typeof id != 'number'){
+            // throw error
+        }
+
+        let task = await tasksService.getById(id);
+
+    res.render('edit-task', {
+            title: 'Edit Task',
+            currentPage: 'home',
+            task:task
+    })
 }
+    catch (e){
+        console.log(e);
+    }
+}
+
+exports.update = async function (req, res, next) {
+
+        let input = {title: req.body.title, description: req.body.description, id: req.body.id};
+
+        let task = await tasksService.editTask(input);
+
+        console.log(task);
+
+        res.redirect('/tasks');
+    }
+

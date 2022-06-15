@@ -1,52 +1,40 @@
-<%- include('partials/header')%>
+<%- include('partials/header') %>
 
-<div class="container">
-<div class="row">
-    <div class="offset-md-2 col-md-8 text-center">
-        <h3>
-            Your To Do List:
-        </h3>
-    </div>
-    <div class="col-md-2">
-        <a class="btn btn-sm btn-outline-primary" href="/tasks/new">+ Add</a>
-    </div>
-</div>
-</div>
-<br>
 <div class="container">
     <div class="row d-flex align-items-center" style="border-radius: 3px;">
         <div class="col-1" style="text-align:center; align-items: center; align-content: center;">#</div>
         <div class="col-2">Title</div>
-        <div class="col-5">Description</div>
-        <div class="col-2">Created On</div>
+        <div class="col-6">Description</div>
+        <div class="col-1">Created On</div>
         <div class="col-2"></div>
     </div>
-    <% for(var i = 0; i < tasks.length; i++) { %>
     <div class="row d-flex align-items-center" style="border-radius: 10px; border:1px solid black; padding: 10px 0px 10px ">
         <div class="col-1" style="text-align:center; align-items: center; align-content: center;">
-            <%-i+1%>
+            >>
         </div>
         <div class="col-2" id="div_title">
-            <%-tasks[i].title%>
+            <%-task.title%>
         </div>
-        <div class="col-5" id="div_description">
-            <%-tasks[i].description%>
+        <div class="col-6" id="div_description">
+            <%-task.description%>
         </div>
-        <div class="col-2">
-            <%-tasks[i].date_created%>
+        <div class="col-1">
+            <%-task.date_created%>
         </div>
         <div class="col-2 btn-group">
-            <form method="get" action="/tasks/<%-tasks[i].id%>/edit-task">
+            <form method="post" action="/tasks/deleteTask/<%- task.id%>">
+                <button class="btn btn-sm btn-outline-success">Done</button>
+            </form>
+            <form method="get" action="/">
                 <button class="btn btn-sm btn-outline-info">Edit</button>
             </form>
-            <form method="post" action="/tasks/deleteTask/<%- tasks[i].id%>">
+            <form method="post" action="/tasks/deleteTask/<%- task.id%>">
                 <button class="btn btn-sm btn-outline-danger">Delete</button>
             </form>
         </div>
     </div>
     <br />
-    <% } %>
 </div>
 </div>
 
-<%- include('partials/footer')%>
+<%- include('partials/footer') %>

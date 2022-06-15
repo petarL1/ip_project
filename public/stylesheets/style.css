@@ -11118,6 +11118,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+body {
+  overflow: auto;
+}
+
 #footer {
   position: absolute;
   bottom: 0;

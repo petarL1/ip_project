@@ -11,7 +11,7 @@
                        value="<%- formData.title.value%>"
                         <% } %>
 
-                       name="title" placeholder="Enter the title">
+                       name="title" placeholder="Enter the title" required>
                 <label for="title">Enter the title</label>
             </div>
             <% if(formData.title && !formData.title.valid) { %>
@@ -24,7 +24,7 @@
                 <% if(formData.description && formData.description.value) { %>
                        value="<%- formData.description.value%>"
                         <% } %>
-                       name="description" placeholder="Enter the description">
+                       name="description" placeholder="Enter the description" required>
                 <label for="description">Enter the description</label>
             </div>
             <% if(formData.description && !formData.description.valid) { %>

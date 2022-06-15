@@ -1,5 +1,7 @@
 @import"../../node_modules/bootstrap/scss/bootstrap";
-
+body{
+  overflow:auto;
+}
 #footer {
   position: absolute;
   bottom: 0;

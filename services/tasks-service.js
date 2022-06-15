@@ -12,6 +12,17 @@ getAll = () =>{
     });
 };
 
+editTask = (input) =>{
+    return new Promise((resolve, reject) => {
+        connection.query("UPDATE tasks SET title='"+input.title+"', description='"+input.description+"' WHERE id ="+input.id, (error, tasks)=>{
+            if(error){
+                return reject(error);
+            }
+            return resolve(tasks);
+        });
+    });
+};
+
 storeNew = (input) =>{
     return new Promise((resolve, reject) => {
         let sql = "INSERT INTO tasks (title, description) VALUES ('" + input.title + "', '" + input.description + "')";
@@ -38,15 +49,13 @@ deleteById = (id) =>{
     });
 };
 
-EditById = (input) =>{
+getById = (id) =>{
     return new Promise((resolve, reject) => {
-        let sql = "UPDATE tasks SET (title, description) VALUES ('" + input.title + "', '" + input.description + "')";
-
-        connection.query(sql,  (error, tasks)=>{
+        connection.query('SELECT id,title,description,DATE_FORMAT(date_created, "%a %e %M %H:%i") as date_created FROM tasks WHERE id = ' + id,  (error, elements)=>{
             if(error){
                 return reject(error);
             }
-            return resolve(tasks);
+            return resolve(elements[0]);
         });
     });
 };
@@ -55,4 +64,6 @@ module.exports = {
     getAll,
     storeNew,
     deleteById,
+    getById,
+    editTask
 }

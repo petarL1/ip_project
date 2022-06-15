@@ -1,0 +1,27 @@
+<%- include('partials/header') %>
+
+<div class="row">
+    <div class="col-lg-12 offset-xl-2 col-sl-8 offset-xxl-3 col-xxl-6">
+
+        <h4>Edit task</h4>
+
+    <form action="/tasks/update" method="post">
+        <input type="hidden" value="<%= task.id %>" name="id">
+        <div class="form-floating mb-2" style="border-radius: 10px;">
+            <input type="text" class="form-control" id="title" placeholder="Title" value="<%= task.title %>" name="title" required>
+            <label for="title">Edit the title</label>
+        </div>
+        <div class="form-floating mb-2" style="border-radius: 10px;">
+            <input type="text" class="form-control" id="description" placeholder="Description" value="<%= task.description %>" name="description" required>
+            <label for="description">Edit the description</label>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-primary" type="submit">Edit task</button>
+        </div>
+    </form>
+</div>
+</div>
+
+<%- include('partials/footer') %>
+
+

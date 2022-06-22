@@ -173,4 +173,3 @@ exports.update = async function (req, res, next) {
 
         res.redirect('/tasks');
     }
-

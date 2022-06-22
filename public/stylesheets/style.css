@@ -11118,17 +11118,8 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-body {
-  overflow: auto;
-}
-
-#footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: #b5ffc9;
-  text-align: center;
-  height: 60px;
+html, body {
+  min-height: 100%;
 }
 
 .nav-link {
@@ -11154,6 +11145,34 @@ body {
 
 input {
   border: 1px solid black;
+}
+
+.about-page {
+  padding: 50px;
+  text-align: center;
+}
+
+.page-wrap {
+  min-height: 100%;
+  margin-bottom: -60px;
+}
+
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+.site-footer, .page-wrap:after {
+  height: 60px;
+}
+
+.site-footer {
+  background: #b5ffc9;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  clear: both;
 }
 
 /*# sourceMappingURL=style.css.map */

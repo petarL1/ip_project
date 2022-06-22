@@ -11,9 +11,6 @@ router.get('/:id/edit-task', tasksController.edit);
 
 router.post('/', tasksController.store);
 router.post('/deleteTask/:id', tasksController.destroy);
-router.post('/update/', tasksController.update);
+router.post('/update', tasksController.update);
 
 module.exports = router;
-
-
-

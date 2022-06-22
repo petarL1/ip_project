@@ -13,6 +13,8 @@
 </div>
 </div>
 <br>
+
+<%if(tasks.length){%>
 <div class="container">
     <div class="row d-flex align-items-center" style="border-radius: 3px;">
         <div class="col-1" style="text-align:center; align-items: center; align-content: center;">#</div>
@@ -21,7 +23,8 @@
         <div class="col-2">Created On</div>
         <div class="col-2"></div>
     </div>
-    <% for(var i = 0; i < tasks.length; i++) { %>
+    <%}%>
+        <% for(var i = 0; i < tasks.length; i++) { %>
     <div class="row d-flex align-items-center" style="border-radius: 10px; border:1px solid black; padding: 10px 0px 10px ">
         <div class="col-1" style="text-align:center; align-items: center; align-content: center;">
             <%-i+1%>

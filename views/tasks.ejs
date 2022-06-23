@@ -38,9 +38,9 @@
         <div class="col-2">
             <%-tasks[i].date_created%>
         </div>
-        <div class="col-2 btn-group">
+        <div class="col-2 ">
             <form method="get" action="/tasks/<%-tasks[i].id%>/edit-task">
-                <button class="btn btn-sm btn-outline-info">Edit</button>
+                <button class="btn btn-sm btn-outline-info" style="width: 58px">Edit</button>
             </form>
             <form method="post" action="/tasks/deleteTask/<%- tasks[i].id%>">
                 <button class="btn btn-sm btn-outline-danger">Delete</button>

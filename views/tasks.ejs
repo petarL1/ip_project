@@ -19,26 +19,26 @@
     <div class="row d-flex align-items-center" style="border-radius: 3px;">
         <div class="col-1" style="text-align:center; align-items: center; align-content: center;">#</div>
         <div class="col-2">Title</div>
-        <div class="col-5">Description</div>
+        <div class="col-6">Description</div>
         <div class="col-2">Created On</div>
-        <div class="col-2"></div>
+        <div class="col-1"></div>
     </div>
     <%}%>
         <% for(var i = 0; i < tasks.length; i++) { %>
-    <div class="row d-flex align-items-center" style="border-radius: 10px; border:1px solid black; padding: 10px 0px 10px ">
+    <div class="row d-flex align-items-center" style="border-radius: 10px; border:1px solid black; padding: 5px 0px 5px ">
         <div class="col-1" style="text-align:center; align-items: center; align-content: center;">
             <%-i+1%>
         </div>
         <div class="col-2" id="div_title">
             <%-tasks[i].title%>
         </div>
-        <div class="col-5" id="div_description">
+        <div class="col-6" id="div_description">
             <%-tasks[i].description%>
         </div>
         <div class="col-2">
             <%-tasks[i].date_created%>
         </div>
-        <div class="col-2 ">
+        <div class="col-1">
             <form method="get" action="/tasks/<%-tasks[i].id%>/edit-task">
                 <button class="btn btn-sm btn-outline-info" style="width: 58px">Edit</button>
             </form>

@@ -42,7 +42,7 @@
             <form method="get" action="/tasks/<%-tasks[i].id%>/edit-task">
                 <button class="btn btn-sm btn-outline-info" style="width: 58px">Edit</button>
             </form>
-            <form method="post" action="/tasks/deleteTask/<%- tasks[i].id%>">
+            <form method="post" onclick="return confirm('Are you sure?')" action="/tasks/deleteTask/<%- tasks[i].id%>">
                 <button class="btn btn-sm btn-outline-danger">Delete</button>
             </form>
         </div>
